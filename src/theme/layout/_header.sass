@@ -1,0 +1,20 @@
+@use '../abstracts/config' as *
+@use '../abstracts/extends' as *
+@use '../abstracts/mixins' as *
+.l-header
+  @extend %flex
+  position: fixed
+  top: 0
+  z-index: 100
+  width: 100%
+  padding: 0.5em $sp__sides
+  background: $color__main
+  background-image: $grad__main
+  &-img
+    max-width: 40vw
+    @include breakpoint('small')
+      max-width: 30vw
+    @include breakpoint('medium')
+      max-width: 20vw
+  .iconText
+    font-size: 2.5rem

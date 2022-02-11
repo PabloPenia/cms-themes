@@ -1,0 +1,19 @@
+@use './abstracts/config' as *
+@use './base'
+@use './layout'
+@use './components'
+/* MAIN LAYOUT */
+.l-featured, .l-templates, .l-plugins, .l-testimonials
+  gap: 2em
+
+@keyframes bounce
+  0%
+    transform: translateX(50%) translateY(50%)
+  25%
+    transform: translateX(50%) translateY(25%)
+  50%
+    transform: translateX(50%) translateY(50%)
+  75%
+    transform: translateX(50%) translateY(35%)
+  100%
+    transform: translateX(50%) translateY(50%)

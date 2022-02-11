@@ -1,0 +1,67 @@
+@use '../abstracts/config' as *
+@use '../abstracts/extends' as *
+.l-testimonials
+  @extend %flex
+  > p
+    font-size: $fsz__big
+  article
+    @extend %card__item
+    max-width: 40rem
+    align-self: stretch
+    margin: 0 auto
+  &__icon
+    margin: 0 auto 1em
+    width: 25%
+    padding-top: 25%
+    svg
+      border: 2px solid $color__main
+      border-radius: 100%
+  aside
+    ul
+      margin-top: 2em
+      display: flex
+      flex-wrap: wrap
+      gap: 1.5em
+      place-content: space-between center
+  .brand-logo
+    display: block
+    padding-top: 3rem
+    width: 12rem
+    fill: black
+  section
+    @extend %flex
+    position: relative
+    margin-top: 3em
+    gap: 1em
+    justify-content: center
+  figure
+    flex: 1 0 25rem
+    max-width: 35rem
+    padding: 2rem
+    border-radius: 1rem
+    box-shadow: 0px 0px 1px grey, 1px 1px 3px 1px black
+    &:nth-child(even)
+      background: $color__main
+      color: $color__link--alt
+      box-shadow: 0px 0px 1px 1px $color__main, 1px 1px 3px 1px var(--violet-1), 0px 0px 3px $color__link--alt inset
+    &:nth-child(odd)
+      background: $color__link--alt
+      color: $color__main
+      box-shadow: 0px 0px 1px 1px $color__main, 1px 1px 3px 1px var(--violet-1), 0px 0px 3px $color__main inset
+  blockquote
+    font-style: italic
+    &:before, &:after
+      content: '\201c'
+      position: absolute
+      font-size: 3em
+      color: $color__main
+      margin: -0.4em
+    &:after
+      margin: 0 -0.4em -1em 0
+      content: '\201d'
+  figure:nth-child(even) blockquote:before,
+  figure:nth-child(even) blockquote:after
+    color: $color__link--alt
+  figcaption
+    margin-top: 1em
+    text-align: right

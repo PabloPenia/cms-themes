@@ -1,0 +1,10 @@
+@use '../abstracts/config' as *
+@use '../abstracts/mixins' as *
+a.iconText
+  color: $color__link--alt
+  span
+    display: inline-block
+    &:nth-child(2)
+      margin-left: 0.5em
+  @include hover
+    opacity: $opacity

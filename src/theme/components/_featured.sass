@@ -1,0 +1,67 @@
+@use '../abstracts/config' as *
+@use '../abstracts/extends' as *
+@use '../abstracts/mixins' as *
+.l-featured
+  @extend %flex
+  > p
+    font-size: $fsz__big
+  h1, h1 + p
+    flex-basis: 100%
+    text-align: center
+  &__video-wrapper
+    overflow: hidden
+    position: relative
+    flex: 1 1 60%
+    &:after
+      padding-top: 56.25%
+      display: block
+      content: ''
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      overflow: hidden
+      border: none
+  &__video-sum
+    @include breakpoint('medium')
+      & > ul:nth-child(2) > li
+        display: block
+        text-align: left
+    & > a:not([class])
+      display: block
+      margin-top: 1em
+      text-align: center
+    li
+      display: inline-block
+      padding: 0.5rem 0
+      line-height: 1.4em
+    > ul > li:before
+      content: '\2714'
+      color: green
+      margin-right: 0.5em
+    > ul li > ul
+      text-align: center
+    & + h3
+      flex-basis: 100%
+    .cms-icon
+      width: 2rem
+      height: 2rem
+      margin-right: 1rem
+  &__features
+    @extend %flex
+    background: linear-gradient( transparent, $color__link--alt )
+    border: 2px solid var(--violet-1)
+    border-radius: 0.5rem
+    li
+      @extend %flex
+      justify-content: unset
+      gap: 1em
+      margin: 0 0.5em 0.5em 0
+      padding: 0.5em 1em
+      font-weight: 700
+      text-align: center
+      text-transform: capitalize
+    ~ a.btn
+      margin: 0 auto

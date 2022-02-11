@@ -1,0 +1,16 @@
+@use '../abstracts/mixins' as *
+.top
+  @include breakpoint('smaller')
+    bottom: 2rem
+    width: 4rem
+    height: 4rem
+    svg
+      width: 2rem
+      height: 2rem
+  @include breakpoint('small')
+    bottom: 5rem
+    width: 6rem
+    height: 6rem
+    svg
+      width: 3rem
+      height: 3rem

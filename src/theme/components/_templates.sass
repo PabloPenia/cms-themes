@@ -1,0 +1,27 @@
+@use '../abstracts/config' as *
+@use '../abstracts/extends' as *
+.l-templates
+  @extend %flex
+  > p
+    font-size: $fsz__big
+  &__cards
+    flex: 1 1 100%
+    display: grid
+    grid-template-columns: repeat(auto-fit, 25rem)
+    place-content: center
+    gap: 1em
+    article
+      @extend %flex
+      padding: 1em
+      border-radius: 0 0 1.5rem 1.5rem
+      background-image: linear-gradient(transparent, $color__link--alt)
+      box-shadow: 0px 0px 5px 1px $color__main inset, 1px 1px 3px 1px $color__main
+      img
+        display: block
+        overflow: hidden
+        border: 1px solid var(--violet-2)
+        box-shadow: 0px 0px 2px 2px var(--violet-2)
+        margin-bottom: 1em
+      p
+        padding: 1em 0
+        text-align: center

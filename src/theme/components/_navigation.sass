@@ -1,0 +1,67 @@
+@use '../abstracts/config' as *
+@use '../abstracts/mixins' as *
+#toggle
+  border: 1px solid var(--violet-2)
+  border-radius: 5px
+  display: none
+  background: var(--violet-1)
+  color: $color__link--alt
+  cursor: pointer
+  font-size: 1.8em
+  &:focus, &:hover
+    background: $color__main
+  &:after
+    content: "\2630"
+  span
+    /* Only show if can't load stylesheets */
+    position: absolute
+    clip: rect(1px, 1px, 1px, 1px)
+    padding: 0
+    border: 0
+    overflow: hidden
+.l-header ul
+  position: absolute
+  top: 100%
+  right: $sp__sides
+  display: flex
+  flex-direction: column
+  background: $color__main
+  background-image: $grad__main
+.js
+  .l-header ul
+    display: none
+  #toggle
+    display: block
+  @include breakpoint('small')
+    .l-header ul
+      display: block
+    #toggle
+      display: none
+.l-header ul.is-active
+  display: block
+.nav-link
+  display: block
+  width: 100%
+  padding: 0.4em 0.8em
+  color: $color__link--alt
+  font-size: 1.2em
+  text-align: center
+  &:hover, &:focus, &:active
+    background: $color__main
+    color: var(--violet-3)
+    border: 0 solid var(--violet-2)
+    border-width: 1px 0
+@include breakpoint('small')
+  #toggle
+    display: none
+  .l-header ul
+    position: relative
+    border: 1px solid $color__main
+    box-shadow: 0px 0px 5px $color__main inset
+
+  .l-header li
+    display: inline-block
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:active
+    border-width: 0px
