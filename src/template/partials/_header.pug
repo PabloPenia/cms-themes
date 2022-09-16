@@ -1,4 +1,7 @@
 header.l-header
-  +link('expand-icon', 'index.html')
-    span CMS Themes
-  include ./components/_navigation
+  +link('expand-icon', '#top')
+    h1 CMS Themes
+  nav(aria-label='Main Navigation')
+    a(href='#templates') Templates
+    a(href='#plugins') Plugins
+    a(href='#testimonials') Testimonials
